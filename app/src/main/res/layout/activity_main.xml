@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Main Activity Screen Shows a GridView when things are working as expected.
+    But to give the user feedback on Loading and errors, i've changed it from just a simple GridView
+    to a Frame Holding either the gridView or textview/progress bar (or combination of both)-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/main_activity"
+    tools:context="com.example.android.popularmovies.MainActivity">
+    <!--Simple GridView for the main activity, images will be populated with each of the movie's posters-->
+    <GridView
+        android:id="@+id/grid_view"
+        style="@style/grid_view_style"
+        android:numColumns="2" />
+
+    <!--Empty View Displays Error or status messages to the user-->
+    <TextView
+        android:id="@+id/empty_view"
+        style="@style/empty_view_style"
+        tools:text="Test this thing" />
+
+    <!--Indeterminate Progress Bar to show activity while Loader is querying the API-->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:indeterminateOnly="true" />
+
+</FrameLayout>

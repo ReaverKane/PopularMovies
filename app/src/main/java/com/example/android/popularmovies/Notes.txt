@@ -1,0 +1,210 @@
+**Note to Reviewer: You can ignore this file, or if you prefer you can use it as a sort of justification
+for my process of creating the project.
+I create this at the start of the project as a sort of blueprint for what i'll need to do, so i
+have a guideline for the whole project. I'm no software engineer, but this helps.
+
+COMPLETED Add internet permissions to Manifesto
+COMPLETED Create a Movie Object class, add Constructor, Getter and Setter Methods
+COMPLETED Create JSONUtils Class, Handle Parsing the JSON (Return Movie List).
+COMPLETED Test with Sample Data
+COMPLETED Create networkUtils Class to handle URL construction and HTTP requests
+Base URL: https://api.themoviedb.org/3/movie/
+Sort: appendPath() popular or top_rated (according to settings)
+API Key: appendQueryParameter ("api_key", <key>)
+COMPLETED Create a MovieLoader Class to handle the async loading
+COMPLETED Change MainActivity to Grid View
+COMPLETED Create ImageAdapter Class for Grid Vew (Ref: https://developer.android.com/guide/topics/ui/layout/gridview.html)
+COMPLETED Setup the Adapter on MainActivity
+COMPLETED Test with Sample Data
+COMPLETED Hook up everything on MainActivity
+COMPLETED Test the Grid with the Posters from the JSON response (Show Toast with title onClick)
+COMPLETED Create a Settings Menu (PrefList Sort by: Popular / Top Rated) get it working (Pref Fragment, Activity, the works)
+COMPLETED Create Detail Activity
+COMPLETED in Main Activity change the onItemClickListner to Create a new intent to open the Detail Activity pass in the Adapter position
+Actually passing a Movie Object (after making it Parcelable)
+COMPLETED Create a Layout for the Details View and populate it with items from the JSON response list corresponding to the position passed in the Intent
+(Movie details layout contains title, release date, movie poster, vote average, and plot synopsis.)
+COMPLETED format date from the string
+COMPLETED Handle navigating back from both activities
+COMPLETED Handle "No connection" Errors
+COMPLETED Visual Polish (add loading indicators, maybe change the main activity Label according to sortOrder)
+COMPLETED Make sure to remove hard-coded strings
+COMPLETED Reformat Code, LINT and Test
+COMPLETED Clean the build and Submit
+
+::::::::::::::::::: STAGE 2 :::::::::::::::::::
+COMPLETED Add 2 new Object types: Trailer (mName, site - disregard results that site != Youtube, key) and Review (Author, content)
+COMPLETED Parse JSON response as these new objects
+
+COMPLETED Add a new Movie Details Object + Parser (from "movie"/movieID endpoint) containing:
+* Genres String[]
+* mTagline String
+* runtime int
+
+COMPLETED Add a new Actor Object + Parser (uses the "credits" endpoint) containing:
+* mCharacter String
+* mName String
+* profile_path String (uses the same URL as Poster path)
+
+COMPLETED New Loader for these Objects
+COMPLETED ListFragment and Adapter for Cast, Reviews and Videos.
+Views:
+**Cast:**
+            mCharacter (Bold)
+Profile
+            actor
+
+**Reviews:**
+    Review
+        "By" author
+
+**Trailer:**
+
+Youtube Logo    mName of the trailer (OnclickListener with intent to open video with key)
+
+COMPLETED hook it up to details view
+COMPLETED onSavedInstanceState passes the current fragment.
+
+COMPLETED create a contract class for the DB
+
+Data to pass:
+ * id -> int (Automatic)
+ * movie_id -> String
+ * title -> String
+ * poster_path -> String (full URL)
+ * backdrop_path -> String (full URL)
+ * vote_average -> float
+ * release_date -> String
+ * overview -> String
+ * runtime -> int
+ * tagline -> String
+ * genres -> String
+
+ (
+
+schema:
+CREATE TABLE movies.db(
+_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+movie_id TEXT NOT NULL,
+movie_title TEXT NOT NULL,
+poster_path TEXT,
+backdrop_path TEXT,
+vote_average REAL NOT NULL,
+release_date TEXT NOT NULL,
+overview TEXT NOT NULL
+runtime INTEGER,
+tagline TEXT,
+genres TEXT);
+
+COMPLETED create Content Provider to add, remove and retrieve  the extended Movie object from a database
+COMPLETED Setup the Save function on Details Activity
+COMPLETED Setup the Delete Function on Details Activity
+COMPLETED Setup the Search Function for Details Activity to change the state of the favourites button
+COMPLETED Cursor loader to get all entries for the Grid View
+COMPLETED Setup the Search Function to load Movie Arrays for Favourites and dipsplay as a grid
+COMPLETED add a favourite button (Maybe a star with state changes - create a query to the DB to check if
+MovieID exists in the Database, and change the state of the star accordingly OnCreate)
+COMPLETED (Optional) when "Favourite" is selected, save the bitmap images to file so the movie details - Unecessary can just take advantage of Picasso's cached images.
+can be viewed offline (not the trailers, that'd be murder on people's phones, also probably not a good idea to view cast and reviews offline (i mean saving all the cast images would be a pain in the ass, as would be to handle arrays of reviews)
+COMPLETED Add a second extra to the DetailsActivity Intent with the "sortOrder"
+Got SortOrder from preferences Instead (adding more extras to the intent was breaking the Parcelable)
+COMPLETED Create a new constructor for the Movie Object to include MovieDetails.
+COMPLETED Create a new method to get MovieDetails differently according to SortOrder
+COMPLETED add a setting to show only movies from the array on the CURSOR (favourited)
+COMPLETED (Optional) Share function for trailers
+COMPLETED change the detailsview portrait mode to Relative layout, since constraint is having a hard time showing all items on lists.
+COMPLETED polish and check fragment behaviours without network connection (perhaps create a defaultview Fragment with error text, or just hide Fragment and Buttons when no connection is detected)
+
+TODO POLISH:
+COMPLETED Review Strings
+COMPLETED StreamLine "Launch Fragment methods"
+COMPLETED check internet connection before launching fragments, displau "emptyview" if there isn't a connection
+COMPLETED make sure landscape layout also works.
+TODO Reformat code, LINT, clean build and submit!
+
+::::::::::::: SAMPLE JSON Response for movie list ::::::::::::
+
+{
+  "page": 1,
+  "total_results": 8150,
+  "total_pages": 408,
+  "results": [
+    {
+      "vote_count": 1183,
+      "id": 19404,
+      "video": false,
+      "vote_average": 9.2,
+      "title": "The Big-Hearted Will Take Away the Bride",
+      "popularity": 13.939353,
+      "poster_path": "/uC6TTUhPpQCmgldGyYveKRAu8JN.jpg",
+      "original_language": "hi",
+      "original_title": "Dilwale Dulhania Le Jayenge",
+      "genre_ids": [
+        35,
+        18,
+        10749
+      ],
+      "backdrop_path": "/nl79FQ8xWZkhL3rDr1v2RFFR6J0.jpg",
+      "adult": false,
+      "overview": "Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh, who in spite of being an NRI is very strict about adherence to Indian values. Simran has left for India to be married to her childhood fiancé. Raj leaves for India with a mission at his hands, to claim his lady love under the noses of her whole family. Thus begins a saga.",
+      "release_date": "1995-10-20"
+    },
+    {
+      "vote_count": 81,
+      "id": 20532,
+      "video": false,
+      "vote_average": 8.7,
+      "title": "Sansho the Bailiff",
+      "popularity": 7.408518,
+      "poster_path": "/deBjt3LT3UQHRXiNX1fu28lAtK6.jpg",
+      "original_language": "ja",
+      "original_title": "山椒大夫",
+      "genre_ids": [
+        18
+      ],
+      "backdrop_path": "/keaFMNUr1OpdHzPWJ0qeDP8hrO8.jpg",
+      "adult": false,
+      "overview": "In medieval Japan a compassionate governor is sent into exile. His wife and children try to join him, but are separated, and the children grow up amid suffering and oppression.",
+      "release_date": "1954-03-31"
+    },
+    {
+      "vote_count": 9595,
+      "id": 278,
+      "video": false,
+      "vote_average": 8.5,
+      "title": "The Shawshank Redemption",
+      "popularity": 30.767014,
+      "poster_path": "/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg",
+      "original_language": "en",
+      "original_title": "The Shawshank Redemption",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "backdrop_path": "/xBKGJQsAIeweesB79KC89FpBrVr.jpg",
+      "adult": false,
+      "overview": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+      "release_date": "1994-09-23"
+    },
+     {
+          "vote_count": 1990,
+          "id": 372058,
+          "video": false,
+          "vote_average": 8.5,
+          "title": "Your Name.",
+          "popularity": 19.94549,
+          "poster_path": "/xq1Ugd62d23K2knRUx6xxuALTZB.jpg",
+          "original_language": "ja",
+          "original_title": "君の名は。",
+          "genre_ids": [
+            10749,
+            16,
+            18
+          ],
+          "backdrop_path": "/6vkhRvsRvWpmaRVyCXaxTkIEb7j.jpg",
+          "adult": false,
+          "overview": "High schoolers Mitsuha and Taki are complete strangers living separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and he in hers. This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other.",
+          "release_date": "2016-08-26"
+        }
+ ]
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?><!--Detail Activity
+Movie details layout contains:
+title,
+release date,
+movie poster,
+vote average,
+and plot synopsis.-->
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_main_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.android.popularmovies.DetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.android.popularmovies.utils.FitBackgroundImage
+            android:id="@+id/iv_backdrop"
+            style="@style/detail_background_image" />
+
+        <ImageButton
+            android:contentDescription="@string/favourites_btn_descript"
+            android:id="@+id/btn_favourites"
+            style="@style/favourites_Button"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/tv_movie_title"
+            style="@style/movie_title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            tools:text="@string/mock_title" />
+
+        <LinearLayout
+            android:id="@+id/ll_poster_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/tv_movie_title"
+            android:orientation="horizontal">
+
+            <com.example.android.popularmovies.utils.FitPosterImage
+                android:id="@+id/iv_poster"
+                style="@style/poster_image"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                tools:src="@drawable/imagenotfound" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tagline"
+                    style="@style/tagline_text"
+                    android:layout_gravity="start"
+                    android:padding="8dp"
+                    android:textSize="20sp"
+                    tools:text="@string/mock_tagline" />
+
+                <TextView
+                    android:id="@+id/tv_release_date"
+                    style="@style/details_text"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    tools:text="@string/mock_release_date" />
+
+                <TextView
+                    android:id="@+id/tv_rating"
+                    style="@style/details_text"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    tools:text="@string/mock_rating" />
+
+                <TextView
+                    android:id="@+id/tv_runtime"
+                    style="@style/details_text"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="16sp"
+                    tools:text="@string/mock_runtime" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_genres_tag"
+                        style="@style/details_text"
+                        android:layout_marginTop="16dp"
+                        android:padding="8dp"
+                        android:text="@string/genres_tag"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_genres"
+                        style="@style/details_text"
+                        android:layout_marginTop="16dp"
+                        android:padding="8dp"
+                        android:textSize="14sp"
+                        tools:text="@string/mock_genre" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_synopsis"
+            style="@style/synopsis_text_style"
+            android:layout_below="@id/iv_backdrop"
+            android:textSize="16sp"
+            tools:text="@string/mock_synopsis" />
+
+        <TextView
+            android:id="@+id/no_internet_view"
+            style="@style/no_fragments_view"
+            android:layout_below="@id/tv_synopsis"
+            android:text="@string/no_internet_details" />
+
+        <LinearLayout
+            android:id="@+id/button_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_synopsis"
+            android:background="@color/colorPrimaryDark"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/tv_cast_button"
+                style="@style/fragment_control_buttons"
+                android:text="@string/cast_button" />
+
+            <TextView
+                android:id="@+id/tv_trailer_button"
+                style="@style/fragment_control_buttons"
+                android:text="@string/trailer_button" />
+
+            <TextView
+                android:id="@+id/tv_reviews_button"
+                style="@style/fragment_control_buttons"
+                android:text="@string/reviews_button" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_holder"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/button_holder" />
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
+

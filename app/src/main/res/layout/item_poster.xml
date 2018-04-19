@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--Layout for Individual List items show in the Grid View by adapter
+    Originally it would be only an ImageView, but for better usability (showing progress)
+    had to iterate it to a more elaborate layout-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/item_image">
+
+    <!--Custom ImageView that scales to poster size-->
+    <com.example.android.popularmovies.utils.FitPosterImage
+        android:id="@+id/item_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <!--ProgressBar that Shows while image loads, when Picasso gets the callback that image is loaded,
+        this view is GONE-->
+    <ProgressBar
+        android:id="@+id/item_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+</FrameLayout>

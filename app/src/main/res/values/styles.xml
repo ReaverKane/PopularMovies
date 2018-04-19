@@ -1,0 +1,193 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--Preference Theme, customized below-->
+        <item name="preferenceTheme">@style/custom_preference_theme</item>
+        <!--Menu popups, customized below-->
+        <item name="actionBarPopupTheme">@style/MainActionBar.Popup</item>
+        <!--Dialog Window theme, customized below-->
+        <item name="alertDialogTheme">@style/popup_Window_style</item>
+    </style>
+    <!--Customized Menu Item popups-->
+    <style name="MainActionBar.Popup" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/primaryLightColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+    <!--Customized Preference Screen-->
+    <style name="custom_preference_theme" parent="PreferenceThemeOverlay.v14.Material">
+        <item name="android:background">@color/primaryLightColor</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryTextColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--Customized Dialog Window Used in Preferences-->
+    <style name="popup_Window_style" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@color/primaryLightColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
+    <!--Main Activity Styles-->
+    <style name="main_activity">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <!--Grid View-->
+    <style name="grid_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">fill_horizontal</item>
+        <item name="android:horizontalSpacing">1dp</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:verticalSpacing">1dp</item>
+    </style>
+
+    <!--Image View Style-->
+    <style name="item_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/background_light</item>
+    </style>
+
+    <!--Style for Empty_view-->
+    <style name="empty_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>
+    </style>
+
+    <!--Styles DetailsActivity-->
+    <!--Background Image Portrait-->
+    <!--Background Image Landscape-->
+    <style name="detail_background_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:focusable">false</item>
+        <item name="android:alpha">0.50</item>
+    </style>
+
+    <!--Title text view-->
+    <style name="movie_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:shadowColor">@color/primaryTextColor</item>
+        <item name="android:shadowDx">1.6</item>
+        <item name="android:shadowDy">1.6</item>
+        <item name="android:shadowRadius">2.3</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--Poster Image View-->
+    <style name="poster_image">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--Clever Shadow :)-->
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+    </style>
+
+    <!--Release tagline text-->
+    <style name="tagline_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:shadowColor">@color/primaryTextColor</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:shadowDx">1.6</item>
+        <item name="android:shadowDy">1.6</item>
+        <item name="android:shadowRadius">2.3</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--details Text-->
+    <style name="details_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:shadowColor">@color/primaryTextColor</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:shadowDx">1.6</item>
+        <item name="android:shadowDy">1.6</item>
+        <item name="android:shadowRadius">2.3</item>
+    </style>
+
+    <!--Genres Text-->
+    <style name="genre_text_style">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:padding">8sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>
+    </style>
+
+    <!--Synopsis Text-->
+    <style name="synopsis_text_style">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:padding">8sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>
+    </style>
+
+    <!--Favourites Star-->
+    <style name="favourites_Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:src">@drawable/ic_star_border_black_24dp</item>
+    </style>
+
+    <style name="no_fragments_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@color/primaryLightColor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="fragment_control_buttons">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/primaryLightColor</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+
+</resources>

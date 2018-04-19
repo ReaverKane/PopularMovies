@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--List Preference item for the Settings Activity
+    key is "sortOrder" = @string/pref_key_sortOrder =
+    default value is "popular" = @string/pref_popular
+    Entry Labels and EntryValues are stored in arrays-->
+    <ListPreference
+        android:defaultValue="@string/pref_popular"
+        android:entries="@array/pref_sortOrder_labels"
+        android:entryValues="@array/pref_sortOrder_values"
+        android:key="@string/pref_key_sortOrder"
+        android:title="@string/pref_sortOrder_title" />
+
+</PreferenceScreen>

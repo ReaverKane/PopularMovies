@@ -1,0 +1,94 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--Names-->
+    <!--Default App Name-->
+    <string name="app_name">Popular Movies</string>
+    <!--Main Activity Titles when sorted for top rated or favourites-->
+    <string name="activity_title_top_rated">Top Rated Movies</string>
+    <string name="activity_title_favourite">My Favourite Movies</string>
+
+    <!--Preferences Menu and Activity-->
+    <!--Preferences Menu-->
+    <string name="prefs_menu_label">Settings</string>
+
+    <!-- Sort Order Preference Labels-->
+    <string name="pref_sortOrder_title">Show which Movie List?</string>
+    <string name="pref_label_top_rated">Top rated</string>
+    <string name="pref_label_popular">Most popular</string>
+    <string name="pref_label_favourites">Favourite movies</string>
+    <!--Sort Order Preference Values-->
+    <string name="pref_top_rated" translatable="false">top_rated</string>
+    <string name="pref_popular" translatable="false">popular</string>
+    <string name="pref_favourite" translatable="false">favourites</string>
+    <!--Sort Order Preference Key-->
+    <string name="pref_key_sortOrder" translatable="false">sortOrder</string>
+
+    <!--DetailsActivity View:-->
+    <!--Detail Activity-->
+    <string name="activity_detail_title">Movie Details</string>
+
+    <!--Mock Strings-->
+    <string name="mock_synopsis">This is a great movie about a great family of great people.\n
+        Lorem ipsum dolor sit amet, et clita instructior vel. Vero veri ad vel.
+        Errem tollit concludaturque ne eam, ad labores graecis erroribus est.
+        His omnes expetendis persequeris in, eos docendi albucius tractatos ei.
+        Qui ut cetero civibus vivendum, nam possim officiis maiestatis an.
+        Te vix doming urbanitas, usu liber option et."</string>
+    <string name="mock_rating">10/10</string>
+    <string name="mock_release_date">2015</string>
+    <string name="mock_title">The Wonders of Wonderful</string>
+    <string name="mock_tagline">Wonders never cease</string>
+    <string name="mock_genre">Horror, Fantasy, Action, Musical</string>
+    <string name="mock_runtime">183 mins</string>
+    <string name="mock_trailer">Wonderful Trailer</string>
+
+    <!--Fragment swap buttons-->
+    <string name="cast_button">Cast</string>
+    <string name="trailer_button">Trailers</string>
+    <string name="reviews_button">Reviews</string>
+
+    <!-- Format Rating -->
+    <string name="format_rating">
+        Rating: <xliff:f example="1.0" id="rate">%1$s</xliff:f> / 10
+    </string>
+
+    <!-- Format Release Year -->
+    <string name="format_year">
+        Released in: <xliff:f example="1995" id="Year">%1$s</xliff:f>
+    </string>
+
+    <!-- Format Runtime -->
+    <string name="format_runtime">
+        Runtime: <xliff:f example="195" id="time">%1$s</xliff:f> mins
+    </string>
+
+    <!-- Format Tagline -->
+    <string name="format_tagline">
+        \" <xliff:f example="&quot;Wonder of Wonders&quot;" id="time">%1$s</xliff:f>\"
+    </string>
+
+    <!--Genres List Tag text-->
+    <string name="genres_tag">Genres:</string>
+    <!--Toast text feedback-->
+    <string name="movie_saved">\nwas added to your Favourites List</string>
+    <string name="movie_deleted">\nwas removed from your Favourites List</string>
+    <!--Image Descriptions-->
+    <string name="you_tube">YouTube Icon.</string>
+    <string name="share">Share This</string>
+    <string name="favourites_btn_descript">Favourites</string>
+
+    <!--Error Messages-->
+    <string name="toast_intent_error">It seems this movie\'s details are unavailable.</string>
+    <string name="no_internet">No Internet Connection! \n\n Tap to attempt reconnecting.</string>
+    <string name="loading">Loading Movies. \n\n Please wait\u2026</string>
+    <string name="no_reviews">No Reviews available for this Movie.</string>
+    <string name="no_trailers">No Trailers available for this Movie.</string>
+    <string name="no_cast">Cast Details Unavailable.</string>
+    <string name="error_saving">Error Saving Movie</string>
+    <string name="error_deleting">Couldn\'t remove movie from DB</string>
+    <string name="no_favourites_saved">There are no movies in your Favourites! \n\nAdd some to see them here</string>
+    <string name="no_internet_details">Further Details Require Internet Connection. \n\nTap here to Reconnect!</string>
+    <string name="format_open_intent_error">Could not open <xliff:f example="Trailer name" id="trailer_name">%1$s</xliff:f>.</string>
+    <string name="format_share_intent_error">Could not share <xliff:f example="Trailer name" id="trailer_name">%1$s</xliff:f>.</string>
+
+
+</resources>
